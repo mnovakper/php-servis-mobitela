@@ -1,0 +1,75 @@
+/*
+ * Globals
+ */
+
+
+/* Custom default button */
+/* .btn-light,
+.btn-light:hover,
+.btn-light:focus {
+  color: #333;
+  text-shadow: none;
+} */
+
+
+/*
+ * Base structure
+ */
+
+body {
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* sirina glavnog diva */
+.cover-container {
+  max-width: 83em;
+}
+
+
+/*
+ * Header
+ */
+
+.nav-masthead .nav-link {
+  color: #444;
+  /* border-bottom: .25rem solid transparent; */
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: #f26522;
+  color: #f26522;
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: #f26522;
+  /* border-bottom-color: #fff; */
+}
+
+h3{
+  color: #f26522;
+}
+
+h1{
+  color: black;
+}
+
+.btn-lg{
+  color: #f26522;
+  background-color: white;
+  border-color: #f26522;
+  text-shadow: none;
+}
+
+.btn-lg:hover{
+  color: white;
+  background-color: #f26522;
+  border-color: #f26522;
+  text-shadow: none;
+}
