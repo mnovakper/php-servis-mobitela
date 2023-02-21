@@ -103,15 +103,15 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?=ROOT?>/admin/admins">
-                            <span data-feather="users" class="align-text-bottom"></span>
-                            Administratori
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="<?=ROOT?>/admin/reports">
                             <span data-feather="file" class="align-text-bottom"></span>
                             Nalozi
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?=ROOT?>/admin/admins">
+                            <span data-feather="users" class="align-text-bottom"></span>
+                            Administratori
                         </a>
                     </li>
                     <li class="nav-item">

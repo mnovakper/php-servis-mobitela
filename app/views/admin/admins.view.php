@@ -36,7 +36,7 @@
 
         <?php if (!empty($row)):?>
             <form method="post">
-                <input value="<?=old_value('username', $row->username)?>" type="text" class="form-control mt-3" name="username" placeholder="Korisničko ime" autofocus>
+                <input value="<?=old_value('username', $row->username)?>" type="text" class="form-control mt-3" name="username" placeholder="Korisničko ime">
                 <input value="<?=old_value('email', $row->email)?>" type="email" class="form-control mt-3" name="email" placeholder="Email">
                 <input value="<?=old_value('password')?>" type="text" class="form-control mt-3" name="password" placeholder="Lozinka (ostavite prazno da zadržite staru lozinku)">
 
@@ -88,7 +88,7 @@
 <?php else:?>
 
     <h3>
-        Lista aktivnih administratora
+        Popis administratora
         <a href="<?=ROOT?>/admin/admins/new">
             <button class="btn btn-primary">Dodaj</button>
         </a>
@@ -99,7 +99,7 @@
             <th>#</th>
             <th>Korisničko ime</th>
             <th>Email</th>
-            <th>Radnja</th>
+            <th>Opcije</th>
         </tr>
 
         <?php if(!empty($rows)):?>

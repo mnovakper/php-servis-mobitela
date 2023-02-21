@@ -8,11 +8,15 @@ class Admin
     public function index()
     {
         $admin = new AdminModel();
+        $report = new ReportModel();
 
         if (!$admin->logged_in())
             redirect('login');
 
-        $this->view('admin/dashboard'); // loading ?admin? view
+        $data['total_admins'] = $admin->get_row("SELECT COUNT(*) AS total FROM admins");
+        $data['total_reports'] = $report->get_row("SELECT COUNT(*) AS total FROM reports");
+
+        $this->view('admin/dashboard', $data); // loading ?admin? view
     }
 
     public function admins($action = null, $id = null)
@@ -76,9 +80,63 @@ class Admin
         $this->view('admin/admins', $data);
     }
 
-    public function reports()
+
+
+
+    //--------------- SEKCIJA S NALOZIMA-------------------
+    public function reports($action = null, $id = null)
     {
-        $this->view('admin/reports');
+
+        $admin = new AdminModel();
+        $report = new ReportModel();
+
+        if (!$admin->logged_in())
+            redirect('login');
+
+        $data['action'] = $action;
+        $data['rows'] = $report->findAll();
+
+        if ($action == 'new')
+        {
+            if ($_SERVER['REQUEST_METHOD'] == "POST") // to avoid displaying errors as soon as page loads, only will show when request method is POST
+            {
+                if ($report->validate($_POST))
+                {
+                    $report->insert($_POST);
+
+                    redirect('admin/reports');
+                }
+            }
+        }else
+        if ($action == 'edit')
+        {
+            $data['row'] = $report->first(['id'=>$id]);
+
+            if ($_SERVER['REQUEST_METHOD'] == "POST")
+            {
+                if ($report->validate($_POST, $id)) // we're  supplying id here, so it knows it's an edit
+                {
+                    $report->update($id, $_POST);
+
+                    redirect('admin/reports');
+                }
+            }
+        }else
+        if ($action == 'delete')
+        {
+            $data['row'] = $report->first(['id'=>$id]);
+
+            if ($_SERVER['REQUEST_METHOD'] == "POST")
+            {
+                $report->delete($id);
+
+                redirect('admin/reports');
+            }
+        }
+
+        $data['errors'] = $report->errors;
+
+        $this->view('admin/reports', $data);
     }
 }
 
