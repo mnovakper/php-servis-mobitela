@@ -79,6 +79,5 @@ class ReportModel
 
         return false;
     }
-
 }
 

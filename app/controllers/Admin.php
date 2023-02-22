@@ -19,7 +19,7 @@ class Admin
         $this->view('admin/dashboard', $data); // loading ?admin? view
     }
 
-    public function admins($action = null, $id = null)
+    public function admins($action = null, $id = null) // (In our MVC) in url /admin/admins, admin represents the page, and admins represents the function, anything after that is passed as $action
     {
         $admin = new AdminModel();
 

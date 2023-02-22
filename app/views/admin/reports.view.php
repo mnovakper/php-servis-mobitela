@@ -4,7 +4,7 @@
 
     <div class="col-md-6 mx-auto p-3">
 
-        <h3>Dodaj nalog</h3>
+        <h3>Novi nalog</h3>
 
         <?php  if (!empty($errors)):?>
             <div class="alert alert-danger text-center"><?=implode("<br>", $errors)?></div>
@@ -90,7 +90,7 @@
                 <div class="form-control mt-3"><?=old_value('phone_status', $row->phone_status)?></div>
                 <div class="form-control mt-3"><?=old_value('date', $row->date)?></div>
 
-                <button class="btn btn-danger my-3">Delete</button>
+                <button class="btn btn-danger my-3">Izbriši</button>
 
                 <a href="<?=ROOT?>/admin/reports">
                     <button type="button" class="float-end btn btn-secondary my-3">Odustani</button>
@@ -110,7 +110,7 @@
     <h3>
         Lista aktivnih naloga
         <a href="<?=ROOT?>/admin/reports/new">
-            <button class="btn btn-primary">Dodaj</button>
+            <button class="btn btn-primary">Izradi novi nalog</button>
         </a>
     </h3>
 
@@ -142,6 +142,9 @@
                         </a>
                         <a href="<?=ROOT?>/admin/reports/delete/<?=$row->id?>">
                             <button class="btn btn-danger">Ukloni</button>
+                        </a>
+                        <a href="<?=ROOT?>/admin/reports/pdf/<?=$row->id?>" target="_blank">
+                            <button class="btn btn-outline-success">PDF</button>
                         </a>
                     </td>
                 </tr>
