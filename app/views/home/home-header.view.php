@@ -82,32 +82,3 @@
     </header>
 
     <main class="px-3">
-        <h1>Provjerite status Vašeg naloga</h1>
-        <p class="lead text-black">Podatke potrebne za popunjavanje formulara možete pronaći na radnom nalogu</p>
-        <p class="lead">
-        <form class="row g-2" action="" >
-            <div class="col-md-5">
-                <input type="email" class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="Broj radnog naloga" required>
-            </div>
-            <div class="col-md-5">
-                <input type="email" class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="Serijski broj (IMEI)" required>
-            </div>
-            <div class="col-md-2">
-                <a href="#" class="btn btn-lg">PROVJERI STATUS</a>
-            </div>
-        </form>
-        </p>
-    </main>
-
-    <footer class="mt-auto text-black-50">
-        <p>© 2023. <?=APP_NAME?> d.o.o. All Rights Reserved.</p>
-    </footer>
-</div>
-
-</body>
-</html>
-
-
-
-
-
