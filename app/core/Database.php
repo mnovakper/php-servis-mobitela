@@ -1,8 +1,8 @@
 <?php
 
-// using trait cuz single inheritance (class can only inherit one class)
 trait Database
 {
+    // spajanje na bazu (PDO)
     private function connect()
     {
         $string = "mysql:hostname=".DBHOST.";dbname=".DBNAME;
@@ -10,7 +10,7 @@ trait Database
         return $con;
     }
 
-    // query = read..., we use query function to get results
+    // query = read...
     public function query($query, $data = [])
     {
         $con = $this->connect();
@@ -28,7 +28,7 @@ trait Database
         return false;
     }
 
-    // grabs one row
+    // dohvaca jedan red
     public function get_row($query, $data = [])
     {
         $con = $this->connect();

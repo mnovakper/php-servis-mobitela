@@ -2,7 +2,7 @@
 
 trait Controller
 {
-    // used for loading views
+    // koristi se za ucitavanje view-a
     public function view($name, $data = [])
     {
         if (!empty($data))
@@ -10,7 +10,7 @@ trait Controller
             
         $filename = "../app/views/".$name.".view.php";
         if(file_exists($filename)) {
-            require $filename; // load controller file
+            require $filename;
         } else {
             $filename = "../app/views/404.view.php";
             require $filename;

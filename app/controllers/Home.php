@@ -6,8 +6,7 @@ class Home
 
     public function index()
     {
-        //echo "Home page Controller";
-        $this->view('home/landing'); // loading ?home? view
+        $this->view('home/landing'); // ucitavanje view-a
     }
 }
 

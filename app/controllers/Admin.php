@@ -4,7 +4,7 @@ class Admin
 {
     use Controller;
 
-    //dashboard
+    // dashboard glavna
     public function index()
     {
         $admin = new AdminModel();
@@ -13,13 +13,15 @@ class Admin
         if (!$admin->logged_in())
             redirect('login');
 
+        // za dashboard cards
         $data['total_admins'] = $admin->get_row("SELECT COUNT(*) AS total FROM admins");
         $data['total_reports'] = $report->get_row("SELECT COUNT(*) AS total FROM reports");
 
-        $this->view('admin/dashboard', $data); // loading ?admin? view
+        $this->view('admin/dashboard', $data);
     }
 
-    public function admins($action = null, $id = null) // (In our MVC) in url /admin/admins, admin represents the page, and admins represents the function, anything after that is passed as $action
+    // sekcija s adminima
+    public function admins($action = null, $id = null)
     {
         $admin = new AdminModel();
 
@@ -31,7 +33,7 @@ class Admin
 
         if ($action == 'new')
         {
-            if ($_SERVER['REQUEST_METHOD'] == "POST") // to avoid displaying errors as soon as page loads, only will show when request method is POST
+            if ($_SERVER['REQUEST_METHOD'] == "POST") // prikaz errora samo ako su podaci poslani
             {
                 if ($admin->validate($_POST))
                 {
@@ -48,7 +50,7 @@ class Admin
 
             if ($_SERVER['REQUEST_METHOD'] == "POST")
             {
-                if ($admin->validate($_POST, $id)) // we're  supplying id here, so it knows it's an edit
+                if ($admin->validate($_POST, $id)) // id zato jer je edit
                 {
                     if (empty($_POST['password']))
                     {
@@ -81,12 +83,9 @@ class Admin
     }
 
 
-
-
-    //--------------- SEKCIJA S NALOZIMA-------------------
+    // sekcija s nalozima
     public function reports($action = null, $id = null)
     {
-
         $admin = new AdminModel();
         $report = new ReportModel();
 
@@ -98,7 +97,7 @@ class Admin
 
         if ($action == 'new')
         {
-            if ($_SERVER['REQUEST_METHOD'] == "POST") // to avoid displaying errors as soon as page loads, only will show when request method is POST
+            if ($_SERVER['REQUEST_METHOD'] == "POST") // prikaz errora samo ako su podaci poslani
             {
                 if ($report->validate($_POST))
                 {
@@ -114,7 +113,7 @@ class Admin
 
             if ($_SERVER['REQUEST_METHOD'] == "POST")
             {
-                if ($report->validate($_POST, $id)) // we're  supplying id here, so it knows it's an edit
+                if ($report->validate($_POST, $id)) // id zato jer je edit
                 {
                     $report->update($id, $_POST);
 
@@ -136,7 +135,7 @@ class Admin
 
         $data['errors'] = $report->errors;
 
-        $this->view('admin/reports', $data);
+        $this->view('admin/reports', $data); // ucitavanje view-a
     }
 }
 

@@ -9,12 +9,12 @@ class Login
         $data['errors'] = [];
 
 
-        if ($_SERVER['REQUEST_METHOD'] == "POST") // to avoid displaying errors as soon as page loads, only will show when request method is POST
+        if ($_SERVER['REQUEST_METHOD'] == "POST")
         {
             $admin = new AdminModel();
             $row = $admin->first(['username' => $_POST['username']]);
 
-            if($row) //if row is present then...
+            if($row)
             {
                 if(password_verify($_POST['password'], $row->password))
                 {
@@ -26,7 +26,7 @@ class Login
             $data['errors']['username'] = "Wrong email or password";
         }
 
-        $this->view('login', $data); // loading ?admin? view
+        $this->view('login', $data); // ucitavanje view-a
     }
 }
 

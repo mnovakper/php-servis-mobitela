@@ -1,5 +1,6 @@
 <?php
 
+// za prikaz..
 function show($stuff)
 {
     echo "<pre>";
@@ -7,19 +8,14 @@ function show($stuff)
     echo "</pre>";
 }
 
-// for security purposes (inputs) - XSS
-function esc($str)
-{
-    return htmlspecialchars($str);
-}
-
+// preusmjeravanje
 function redirect($path)
 {
     header("Location: " . ROOT."/".$path);
     die();
 }
 
-//used for retaining values in forms after unsuccessful submit
+// koristi se za zadrzavanje vrijednosti u obrascima nakon neuspjesnog slanja
 function old_value($key, $default = '')
 {
     if(!empty($_POST[$key]))
@@ -28,15 +24,15 @@ function old_value($key, $default = '')
     return $default;
 }
 
-// read data from the user
+// baca odabrani podatak (ili podatke) od korisnika (admina) prema imenu koje odaberemo
 function admin($key = '')
 {
     if (!empty($_SESSION['ADMIN']))
     {
         if (empty($key))
-            return $_SESSION['ADMIN']; // if we didn't supply a key, return a whole row
+            return $_SESSION['ADMIN']; // ako nismo dali key, vrati cijeli red
 
-        if (!empty($_SESSION['ADMIN']->$key)) // if key supplied, check if exists and return it
+        if (!empty($_SESSION['ADMIN']->$key)) // ako imamo key, provjeri postoji li i vrati vrijednost
         {
             return $_SESSION['ADMIN']->$key;
         }

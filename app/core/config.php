@@ -1,4 +1,4 @@
-<?php /** @noinspection SpellCheckingInspection */
+<?php
 
 if ($_SERVER['SERVER_NAME'] == 'localhost')
 {
@@ -9,7 +9,7 @@ if ($_SERVER['SERVER_NAME'] == 'localhost')
     define('DBPASS', '');
     define('DBDRIVER', '');
 
-    // constant for absolute path for files (local)
+    // konstanta za apsolutni put za datoteke (local)
     define('ROOT', 'http://localhost/PROJECTS/php-servis-mobitela/public');
 } else {
     // database config (deployed)
@@ -19,10 +19,9 @@ if ($_SERVER['SERVER_NAME'] == 'localhost')
     define('DBPASS', '');
     define('DBDRIVER', '');
 
-    // constant for absolute path for files (deployed)
+    // konstanta za apsolutni put za datoteke (deployed)
     define('ROOT', 'https://www.tvojnekaawebstranica.com');
 }
 
 define('APP_NAME', "Agramservis");
 define('APP_DESC', "Učinkovitost. Pouzdanost. Kvaliteta. Zadovoljstvo");
-define('DEBUG', true); // true shows errors, false doesn't
