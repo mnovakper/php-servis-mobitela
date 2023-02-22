@@ -51,6 +51,8 @@
                 <input value="<?=old_value('phone_damage', $row->phone_damage)?>" type="text" class="form-control mt-3" name="phone_damage" placeholder="Vidljiva oštećenja">
                 <input value="<?=old_value('phone_malfunction', $row->phone_malfunction)?>" type="text" class="form-control mt-3" name="phone_malfunction" placeholder="Opis kvara">
                 <input value="<?=old_value('phone_status', $row->phone_status)?>" type="text" class="form-control mt-3" name="phone_status" placeholder="Status uređaja (u obradi / gotovo)">
+                <div class="form-control mt-3">DATUM: <?=old_value('date', $row->date)?></div>
+                <div class="form-control mt-3">ZAPRIMIO: <?=old_value('cashier_name', $row->cashier_name)?></div>
 
                 <button class="btn btn-primary my-3">Spremi</button>
 
@@ -88,7 +90,8 @@
                 <div class="form-control mt-3"><?=old_value('phone_damage', $row->phone_damage)?></div>
                 <div class="form-control mt-3"><?=old_value('phone_malfunction', $row->phone_malfunction)?></div>
                 <div class="form-control mt-3"><?=old_value('phone_status', $row->phone_status)?></div>
-                <div class="form-control mt-3"><?=old_value('date', $row->date)?></div>
+                <div class="form-control mt-3">DATUM: <?=old_value('date', $row->date)?></div>
+                <div class="form-control mt-3">ZAPRIMIO: <?=old_value('cashier_name', $row->cashier_name)?></div>
 
                 <button class="btn btn-danger my-3">Izbriši</button>
 
