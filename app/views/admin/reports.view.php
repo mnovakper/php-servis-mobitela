@@ -52,8 +52,8 @@
                 <input value="<?=old_value('phone_damage', $row->phone_damage)?>" type="text" class="form-control mt-3" name="phone_damage" placeholder="Vidljiva oštećenja">
                 <input value="<?=old_value('phone_malfunction', $row->phone_malfunction)?>" type="text" class="form-control mt-3" name="phone_malfunction" placeholder="Opis kvara">
                 <input value="<?=old_value('phone_status', $row->phone_status)?>" type="text" class="form-control mt-3" name="phone_status" placeholder="Status uređaja (u obradi / gotovo)">
-                <div class="form-control mt-3">DATUM: <?=old_value('date', $row->date)?></div>
-                <div class="form-control mt-3">ZAPRIMIO: <?=old_value('cashier_name', $row->cashier_name)?></div>
+                <input value="DATUM: <?=old_value('date', $row->date)?>" type="text" class="form-control mt-3" name="date" placeholder="Status uređaja (u obradi / gotovo)" disabled>
+                <input value="ZAPRIMIO: <?=old_value('cashier_name', $row->cashier_name)?>" type="text" class="form-control mt-3" name="cashier_name" placeholder="Status uređaja (u obradi / gotovo)" disabled>
 
                 <button class="btn btn-primary my-3">Spremi</button>
 
