@@ -20,6 +20,7 @@
             <input value="<?=old_value('phone_damage')?>" type="text" class="form-control mt-3" name="phone_damage" placeholder="Vidljiva oštećenja">
             <input value="<?=old_value('phone_malfunction')?>" type="text" class="form-control mt-3" name="phone_malfunction" placeholder="Opis kvara">
             <input value="<?=old_value('phone_status')?>" type="text" class="form-control mt-3" name="phone_status" placeholder="Status uređaja (u obradi / gotovo)">
+            <input value="<?=$_SESSION['ADMIN']->username?>" type="text" class="form-control mt-3" name="cashier_name" placeholder="Status uređaja (u obradi / gotovo)" readonly>
 
             <button class="btn btn-primary my-3">Spremi</button>
 
