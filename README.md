@@ -7,6 +7,8 @@ Za backend korišten čisti PHP (+mysql). Za frontend korišten modificirani boo
 ## Screenshots
 
 ![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![FireShot Capture 014 - Agramservis - localhost](https://user-images.githubusercontent.com/20170617/222815559-a6a45c24-4470-4845-9ec7-ba9bccb605d1.png)
+
 
 ---
 TODO:
